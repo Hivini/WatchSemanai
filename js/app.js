@@ -38,6 +38,9 @@ login.addEventListener("click", function() {
 auth.onAuthStateChanged(function(user) {
     if (user) {
         $("#loginDiv").addClass("collapse");
+        $(".full-container").css("background-image", "url(img/heartbeat2.ppg)");
+        $(".topbar").css("border", "2px solid black");
+        $(".topbar h1").css("color", "black");
         $("#infoDiv").removeClass("collapse");
 
         var fb_bpm = firebase.database().ref().child("heartRate");
@@ -54,6 +57,9 @@ auth.onAuthStateChanged(function(user) {
     else {
         // Cuando no se ha hecho login, solo muestra esta sección
         $("#infoDiv").addClass("collapse");
+        $(".full-container").css("background-image", "url(img/background.jpg)");
+        $(".topbar").css("border", "2px solid white");
+        $(".topbar h1").css("color", "white");
         $("#loginDiv").removeClass("collapse");
     }
 });
