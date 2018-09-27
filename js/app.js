@@ -10,6 +10,7 @@ var config = {
 firebase.initializeApp(config);
 const auth=firebase.auth();
 
+// Login
 var login = document.getElementById("login");
 var email = document.getElementById("email");
 var password = document.getElementById("password");
@@ -17,11 +18,12 @@ var logout = document.getElementById("logout");
 var alertClose = document.getElementById("alertClose");
 var alertMessage = document.getElementById("alertMessage");
 
+// Data
+var bpm = document.getElementById("bpm");
 
 login.addEventListener("click", function() {
     let email_v = email.value;
     let password_v = password.value;
-
     auth.signInWithEmailAndPassword(email_v, password_v).catch(function(error) {
         // TODO Check this
         // Handle Errors here.
@@ -30,7 +32,6 @@ login.addEventListener("click", function() {
         alertMessage.innerHTML = error.message;
         $(".alert").hide().show('medium');
         console.log(errorMessage);
-        // ...
     });
 });
 
@@ -38,6 +39,16 @@ auth.onAuthStateChanged(function(user) {
     if (user) {
         $("#loginDiv").addClass("collapse");
         $("#infoDiv").removeClass("collapse");
+
+        var fb_bpm = firebase.database().ref().child("heartRate");
+        console.log(fb_bpm);
+        fb_bpm.on("value",function (snapshot){
+            bpm.innerHTML=snapshot.val() + " % de iluminacion"
+        });
+
+        //fb_bpm.on("value", function(snapshot) {
+          //  bpm.innerHTML = snapshot.val();
+        //});
     }
 
     else {
@@ -48,7 +59,7 @@ auth.onAuthStateChanged(function(user) {
 });
 
 logout.addEventListener("click",function(){
-    auth.signOut ();
+    auth.signOut();
 });
 
 alertClose.addEventListener("click", function() {

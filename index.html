@@ -25,39 +25,49 @@
         </div>
 
         <div id="infoDiv">
-            <p>Hidden paragraph</p>
+
+            <div class="row">
+                <div class="col" align="center">
+                    <h3 id="bpm">BPM: </h3>
+                </div>
+
+            </div>
+
+            <div id="chart_div"></div>
+
             <button type="button" class="btn btn-secondary" id="logout">Sign Out</button>
         </div>
 
         <div id="loginDiv">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Login Form</h5>
+            <div class="row">
+                <div class="offset-2 col-sm-8" align="center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Login Form</h5>
 
-                    <div class="alert alert-danger alert-dismissable">
-                        <button type="button" class="close" id="alertClose" aria-hidden="true">&times;</button>
-                        <h4 id="alertTitle">Try Again</h4>
-                        <hr>
-                        <p id="alertMessage"></p>
-                    </div> <!-- Alert -->
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" id="alertClose" aria-hidden="true">&times;</button>
+                                <h4 id="alertTitle">Try Again</h4>
+                                <hr>
+                                <p id="alertMessage"></p>
+                            </div> <!-- Alert -->
 
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <button type="button" class="btn btn-success" id="login">Login</button>
-                    </form>
-                </div><!-- Card body -->
-            </div> <!-- Login card -->
-
-
-
+                            <form>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <button type="button" class="btn btn-success" id="login">Login</button>
+                            </form>
+                        </div><!-- Card body -->
+                    </div> <!-- Login card -->
+                </div> <!-- Col -->
+            </div> <!-- Row -->
         </div> <!-- Login Div -->
     </div><!-- Container -->
 
@@ -73,7 +83,10 @@
     <!-- Scripts para slider bar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.js" integrity="sha256-0w/fZPAdu72g2CGIv9Ha8Lp9qXAjls4R2QmMJ5B2Qb4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js" integrity="sha256-tDcb6zRMjjdonaeNQujdwW5FQdABco7S2Z60J4cbH9s=" crossorigin="anonymous"></script>
+    <!-- Google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Custom JS -->
+    <script src="js/charts.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
