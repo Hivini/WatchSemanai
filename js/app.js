@@ -14,6 +14,8 @@ var login = document.getElementById("login");
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var logout = document.getElementById("logout");
+var alertClose = document.getElementById("alertClose");
+var alertMessage = document.getElementById("alertMessage");
 
 
 login.addEventListener("click", function() {
@@ -25,6 +27,8 @@ login.addEventListener("click", function() {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
+        alertMessage.innerHTML = error.message;
+        $(".alert").hide().show('medium');
         console.log(errorMessage);
         // ...
     });
@@ -45,4 +49,8 @@ auth.onAuthStateChanged(function(user) {
 
 logout.addEventListener("click",function(){
     auth.signOut ();
+});
+
+alertClose.addEventListener("click", function() {
+   $(".alert").hide();
 });

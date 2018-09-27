@@ -26,13 +26,21 @@
 
         <div id="infoDiv">
             <p>Hidden paragraph</p>
-
             <button type="button" class="btn btn-secondary" id="logout">Sign Out</button>
         </div>
 
         <div id="loginDiv">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Login Form</h5>
+
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" id="alertClose" aria-hidden="true">&times;</button>
+                        <h4 id="alertTitle">Try Again</h4>
+                        <hr>
+                        <p id="alertMessage"></p>
+                    </div> <!-- Alert -->
+
                     <form>
                         <div class="form-group">
                             <label for="email">Email address</label>
@@ -43,13 +51,15 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Password">
                         </div>
-                        <button type="button" class="btn btn-primary" id="login">Login</button>
+                        <button type="button" class="btn btn-success" id="login">Login</button>
                     </form>
-                </div>
-            </div>
+                </div><!-- Card body -->
+            </div> <!-- Login card -->
 
-        </div>
-    </div>
+
+
+        </div> <!-- Login Div -->
+    </div><!-- Container -->
 
 
 
