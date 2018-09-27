@@ -6,3 +6,11 @@
     display: flex;
     justify-content: center;
 }
+
+·chart_div{
+  width: 80%;
+}
+
+.button-logout{
+  text-align: center;
+}
