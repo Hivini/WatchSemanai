@@ -43,7 +43,7 @@ auth.onAuthStateChanged(function(user) {
         var fb_bpm = firebase.database().ref().child("heartRate");
         console.log(fb_bpm);
         fb_bpm.on("value",function (snapshot){
-            bpm.innerHTML=snapshot.val() + " % de iluminacion"
+            bpm.innerHTML="BPM: " + snapshot.val();
         });
 
         //fb_bpm.on("value", function(snapshot) {
