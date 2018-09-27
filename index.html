@@ -13,13 +13,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 <body>
 
+  <div class="full-container">
+
+
     <div class="container">
-        <div class="row">
+        <div class="row top-row">
             <div class="topbar">
-                <h1 id="title">Welcome to the web app</h1>
+                <h1 id="title">Watch I</h1>
             </div>
             <hr>
         </div>
@@ -43,10 +47,9 @@
 
         <div id="loginDiv">
             <div class="row">
-                <div class="offset-2 col-sm-8" align="center">
-                    <div class="card">
+                <div class="col-sm-12" align="center">
+                    <div class="card all-login">
                         <div class="card-body">
-                            <h5 class="card-title">Login Form</h5>
 
                             <div class="alert alert-danger alert-dismissable">
                                 <button type="button" class="close" id="alertClose" aria-hidden="true">&times;</button>
@@ -65,7 +68,10 @@
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" placeholder="Password">
                                 </div>
-                                <button type="button" class="btn btn-success" id="login">Login</button>
+                                <div class="sign-button">
+                                  <button type="button" class="btn btn-success" id="login">Login</button>
+                                </div>
+
                             </form>
                         </div><!-- Card body -->
                     </div> <!-- Login card -->
@@ -73,7 +79,7 @@
             </div> <!-- Row -->
         </div> <!-- Login Div -->
     </div><!-- Container -->
-
+  </div>
 
 
 
