@@ -55,6 +55,20 @@ auth.onAuthStateChanged(function(user) {
 
         fb_bpm.on("value",function (snapshot){
             bpm.innerHTML="BPM: " + snapshot.val();
+            $( ".corazon-div" ).animate({
+              width: "12%",
+              marginLeft: "44%",
+              marginRight: "44%;"
+
+            }, 500,);
+            $( ".corazon-div" ).animate({
+              width: "10%",
+              marginLeft: "45%",
+              marginRight: "45%;"
+
+
+            }, 500,);
+
         });
 
         fb_distance.on("value",function (snapshot){
