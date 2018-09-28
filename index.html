@@ -35,8 +35,39 @@
               <div class="heart">
                   <h3 id="bpm">BPM: </h3>
                   <div id="chart_div"></div>
+
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead class="thead-dark">
+                          <tr>
+                              <th scope="col">Variable</th>
+                              <th scope="col">Value</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>Distance</td>
+                              <td id="distance"></td>
+                          </tr>
+                          <tr>
+                              <td>Temperature</td>
+                              <td id="temperature"></td>
+                          </tr>
+                          <tr>
+                              <td>Humidity</td>
+                              <td id="humidity"></td>
+                          </tr>
+                          <tr>
+                              <td>Tilt</td>
+                              <td id="slope"></td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
               </div>
             </div>
+
+
             <div class="button-logout">
               <button type="button" class="btn btn-secondary" id="logout">Sign Out</button>
             </div>

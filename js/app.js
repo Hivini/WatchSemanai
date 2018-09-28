@@ -20,6 +20,10 @@ var alertMessage = document.getElementById("alertMessage");
 
 // Data
 var bpm = document.getElementById("bpm");
+var distance = document.getElementById("distance");
+var temperature = document.getElementById("temperature");
+var humidity = document.getElementById("humidity");
+var slope = document.getElementById("slope");
 
 login.addEventListener("click", function() {
     let email_v = email.value;
@@ -44,14 +48,35 @@ auth.onAuthStateChanged(function(user) {
         $("#infoDiv").removeClass("collapse");
 
         var fb_bpm = firebase.database().ref().child("heartRate");
-        console.log(fb_bpm);
+        var fb_distance = firebase.database().ref().child("distance");
+        var fb_temperature = firebase.database().ref().child("temperatura");
+        var fb_humidity = firebase.database().ref().child("humedad");
+        var fb_slope = firebase.database().ref().child("inclinar");
+
         fb_bpm.on("value",function (snapshot){
             bpm.innerHTML="BPM: " + snapshot.val();
         });
 
-        //fb_bpm.on("value", function(snapshot) {
-          //  bpm.innerHTML = snapshot.val();
-        //});
+        fb_distance.on("value",function (snapshot){
+            distance.innerHTML= snapshot.val() + " cm";
+        });
+
+        fb_temperature.on("value",function (snapshot){
+            temperature.innerHTML= snapshot.val() + " ºC";
+        });
+
+        fb_humidity.on("value",function (snapshot){
+            humidity.innerHTML= snapshot.val() + " RH";
+        });
+
+        fb_slope.on("value",function (snapshot){
+            if (String(snapshot.val()) === "1") {
+                slope.innerHTML= "Is tilted";
+            } else {
+                slope.innerHTML = "It's not tilted";
+            }
+
+        });
     }
 
     else {
